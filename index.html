@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!-- Reset.css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  
+  <title>hANGER management - Home</title>
+  <link rel="icon" href="assets/hANGER-logo.jpg" type="image/gif" sizes="32x32">
+
+</head>
+
+<body>
+  <header>
+    <!-- Top Nav -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+      <div class="container col-xs-12 col-sm-12 nav-bar-container">
+        <a class="navbar-brand" href="#">h<b id="red">ANGER</b> management</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Hamburger Nav -->
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">How It Works</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Dietary Lifestyle Glossary</a>
+            </li>
+          </ul>
+        </div> -->
+        
+      </div>
+    </nav>
+  </header>
+
+  <!-- Carousel -->
+  <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="10000">
+      <img srcset="https://pkelliher.imgix.net/donuts.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=1 1x,
+      https://pkelliher.imgix.net/donuts.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=2 2x,
+      https://pkelliher.imgix.net/donuts.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=3 3x"
+      src="https://pkelliher.imgix.net/donuts.jpg?fit=crop&h=784&w=1800&auto=enhance"
+      sizes="100vw">
+      </div>
+      <div class="carousel-item" data-interval="3000">
+        <img srcset="https://pkelliher.imgix.net/strawberries.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=1 1x,
+        https://pkelliher.imgix.net/strawberries.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=2 2x,
+        https://pkelliher.imgix.net/strawberries.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=3 3x"
+        src="https://pkelliher.imgix.net/strawberries.jpg?fit=crop&h=784&w=1800&auto=enhance"
+        sizes="100vw"/>
+      </div>
+      <div class="carousel-item">
+        <img srcset="https://pkelliher.imgix.net/coli.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=1 1x,
+        https://pkelliher.imgix.net/coli.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=2 2x,
+        https://pkelliher.imgix.net/coli.jpg?fit=crop&h=784&w=1800&auto=enhance&dpr=3 3x"
+        src="https://pkelliher.imgix.net/coli.jpg?fit=crop&h=784&w=1800&auto=enhance"
+        sizes="100vw"/>
+      </div>
+    </div>
+
+    <!-- Carousel Arrows -->
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+  </div>
+    
+
+  <!-- Recipe Bookmark -->
+  <div id="recipe-bookmark" class="text-center">
+    Recipe Bookmark
+    <div id="bookmark-list"  class="col-md-12">placeholder</div>
+  </div>
+  <!-- Main Search Bar -->
+  <form class="search-form">
+    <div class="form-group" id="search-bar">
+      <div class="input-group input-group-lg center-block">
+        <input id="ingredient-1" type="text" placeholder="Try searching 'keto-friendly' or 'chicken'!" class="form-control ingredient">
+                
+        <button type="submit" class="btn btn-link" value="input">
+        <span class="input-group-addon"><i class="fas fa-search fa-2x"></i></span>
+        </button>
+      </div>
+    
+      <!-- Trigger Button for Advanced Search Modal -->
+      <button type="button" class="btn btn-outline-danger btn-sm" id="adv-search-button" data-toggle="modal" data-target="#advSearchMod">
+      Advanced Search Options
+      </button>
+
+    </div>
+  </form>
+
+  
+  <!-- Back-to-Top Button -->
+  <button class="btn btn-outline-danger" id="back-to-top" title="Go to top">&#9650; Back to Top</button>
+
+
+  <!-- SINGLE RECIPE DIV AS A BUTTON trigger modal // commented out just for my ref // do not use-->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#singleRecipeMod">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Single recipe display modal -->
+  <div class="modal fade" id="singleRecipeMod" tabindex="-1" role="dialog" aria-labelledby="singleRecipeModTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content bg-light">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="singleRecipeModTitle">Modal title</h5>
+        <button type="button" class="close closed" data-dismiss="modal" aria-label="Close">
+          <span class="close" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body" id="single-display-modal">
+        <!-- YouTube player div for Luc - JKM -->
+        <div id="player">YouTube Video Placeholder</div>
+
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary closed" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-outline-danger search-form">Save changes</button> -->
+      </div>
+
+    </div>
+    </div>
+  </div>
+          
+  <div id="all-results">  
+    
+    <div id="recipe-results" class="container"></div>
+    <!-- <div id="shopping-list">Shopping list placeholder</div> -->
+  </div>
+
+
+  <!-- Modal for filters-->
+  <div class="modal fade" id="advSearchMod" tabindex="-1" role="dialog" aria-labelledby="advSearchModTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content bg-light">
+        
+      <div class="modal-header">
+      <h5 class="modal-title" id="advSearchModTitle">Advanced Search Options</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+          
+      <div class="modal-body">
+        <form class="search-form">
+          <p>Enter one search ingredient:<br>
+          <input id="ingredient-2" type="text" class="ingredient"><br>
+          </p>
+
+          <p>
+          Calories:<br>
+          max. <input type="number" class="calories"> calories per serving<br>
+          </p>
+
+          <p>
+          Cooking Time:<br>
+          max. <input type="number" class="time"> minutes<br>
+          </p>
+
+          <p>
+          <a class="btn btn-light btn-outline-dark" data-toggle="collapse" href="#dietCollapse" role="button" aria-expanded="false" aria-controls="dietCollapse">&#9660; Diet:</a><br> 
+          <div class="collapse" id="dietCollapse">
+            <div class="card card-body">
+              Choose One<br>
+              <input type="checkbox" class="diet" value="High-Protein">High Protein <br>
+              <input type="checkbox" class="diet" value="High-Fiber">High-Fiber<br>
+              <input type="checkbox" class="diet" value="Low-Carb">Low Carb<br>
+              <input type="checkbox" class="diet" value="Low-Fat">Low-Fat<br>
+              <input type="checkbox" class="diet" value="Low-Sodium">Low-Sodium<br>       
+            </div>
+          </div>
+          </p>
+
+          <p>
+          <a class="btn btn-light btn-outline-dark" data-toggle="collapse" href="#healthCollapse" role="button" aria-expanded="false" aria-controls="healthCollapse">&#9660; Health:</a><br> 
+          <div class="collapse" id="healthCollapse">
+            <div class="card card-body">
+              <input type="checkbox" class="health" value="Keto-Friendly">Keto-Friendly<br> 
+              <input type="checkbox" class="health" value="Kosher">Kosher<br>
+              <input type="checkbox" class="health" value="Paleo">paleo<br>
+              <input type="checkbox" class="health" value="Vegan">Vegan<br>
+              <input type="checkbox" class="health" value="Vegetarian">Vegetarian<br>
+              <input type="checkbox" class="health" value="Dairy-Free">Dairy-Free<br>
+              <input type="checkbox" class="health" value="Alcohol-Free">Alcohol-Free<br>
+              <input type="checkbox" class="health" value="Crustacean-Free">Crustacean-Free<br>
+              <input type="checkbox" class="health" value="Egg-Free">Egg-Free<br>
+              <input type="checkbox" class="health" value="Fish-Free">Fish-Free<br>
+              <input type="checkbox" class="health" value="Gluten-Free">Gluten-Free<br>
+              <input type="checkbox" class="health" value="Peanut-Free">Peanut-Free<br>
+              <input type="checkbox" class="health" value="Shellfish-Free">Shellfish-Free<br>
+              <input type="checkbox" class="health" value="Wheat-Free">Wheat-Free<br>              
+            </div>
+          </div>
+          </p>
+
+          <p>
+          Exclude these ingredients:<br>
+          <input type="text" class="excluded">  <br>
+          </p>
+
+          <p>
+          <label>How many results would you like to see?</label>
+          <select id = "results-quantity">
+          <option value = "5">5</option>
+          <option value = "10">10</option>
+          <option value = "15">15</option>
+          </select>
+          </p> 
+                          
+          <!-- modal footer intentionally placed inside form tags -->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-danger search-form">Search with Filter</button>
+          </div>
+
+        </form>
+      </div>
+        
+    </div>
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->          
+  <div class="d-flex justify-content-center navbar-dark fixed-bottom bg-dark" id="bottomNav">
+    <div class="p-2 bd-highlight">h<b id="red">ANGER</b> management © 2019</div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Our Javascript -->
+  <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+</html>
+
